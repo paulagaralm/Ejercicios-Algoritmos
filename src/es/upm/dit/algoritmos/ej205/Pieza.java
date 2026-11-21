@@ -15,7 +15,7 @@ public class Pieza {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
 	public boolean isDefectuosa() {
@@ -31,8 +31,9 @@ public class Pieza {
 	}
 
 	public static boolean contieneDefectos(Pieza piezaPrincipal) {
-		if (piezaPrincipal == null)
+		if (piezaPrincipal == null) {
 			return false;
+		}
 
 		// Caso base: La pieza actual está defectuosa
 		if (piezaPrincipal.isDefectuosa()) {
