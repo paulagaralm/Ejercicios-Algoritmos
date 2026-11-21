@@ -15,7 +15,7 @@ public class Habilidad {
 	}
 	
 	public String getId() {
-		return id;
+		return this.id;
 	}
 
 	public int getCoste() {
