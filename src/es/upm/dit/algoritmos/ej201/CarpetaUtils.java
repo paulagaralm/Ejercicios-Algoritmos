@@ -3,12 +3,13 @@ package es.upm.dit.algoritmos.ej201;
 public class CarpetaUtils {
 
 	public static double calcularPesoTotal(Carpeta inicio) {
-	    // Caso base implícito: si la carpeta no tiene archivos ni subcarpetas,
-	    // los bucles no se ejecutan y devuelve 0.0.
+	    // Caso base implícito: si la carpeta no tiene archivos ni subcarpetas
 	    
-	    if (inicio == null) return 0.0; // Protección contra null
+	    if (inicio == null) { // Protección contra null
+	    	return 0.0;
+	    }
 
-	    double pesoTotal = 0.0;
+	    double pesoTotal = 0.0; // variable para el resultado
 
 	    // Sumar peso de archivos directos
 	    if (inicio.getArchivos() != null) {
@@ -17,7 +18,7 @@ public class CarpetaUtils {
 	        }
 	    }
 
-	    // Sumar peso de subcarpetas (Paso recursivo)
+	    // Sumar peso de subcarpetas (paso recursivo)
 	    if (inicio.getSubcarpetas() != null) {
 	        for (Carpeta sub : inicio.getSubcarpetas()) {
 	            pesoTotal += calcularPesoTotal(sub);
